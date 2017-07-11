@@ -1,14 +1,15 @@
 .selected {
-    background-color: #CFD8DC !important;
-    color: white;
-  }
-  .monsters {
-    margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;
-    width: 15em;
-  }
-  .monsters li {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.monsters {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+
+  li {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -17,21 +18,25 @@
     padding: .3em 0;
     height: 1.6em;
     border-radius: 4px;
+
+    &.selected:hover {
+      background-color: #BBD8DC !important;
+      color: white;
+    }
+
+    &:hover {
+      color: #607D8B;
+      background-color: #DDD;
+      left: .1em;
+    }
   }
-  .monsters li.selected:hover {
-    background-color: #BBD8DC !important;
-    color: white;
-  }
-  .monsters li:hover {
-    color: #607D8B;
-    background-color: #DDD;
-    left: .1em;
-  }
-  .monsters .text {
+
+  .text {
     position: relative;
     top: -3px;
   }
-  .monsters .badge {
+
+  .badge {
     display: inline-block;
     font-size: small;
     color: white;
@@ -45,3 +50,4 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
+}

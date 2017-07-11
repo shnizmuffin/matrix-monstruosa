@@ -1,0 +1,12 @@
+<div>
+  <ul class="monsters">
+    <li *ngFor="let monster of monsters" [class.selected]="monster === selectedMonster" (click)="onSelect(monster)">
+      <span class="badge">{{monster.id}}</span> {{monster.name}}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedMonster">
+  <h2>{{selectedMonster.name | uppercase}}</h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
