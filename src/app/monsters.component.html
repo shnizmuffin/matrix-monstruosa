@@ -1,11 +1,17 @@
 <div>
+  <label>Monster Name:</label>
+  <input #monsterName />
+  <button (click)="add(monsterName.value); monsterName.value=''">Add</button>
+</div>
+<div>
   <ul class="monsters">
     <li *ngFor="let monster of monsters" [class.selected]="monster === selectedMonster" (click)="onSelect(monster)">
-      <span class="badge">{{monster.id}}</span> {{monster.name}}
+      <span class="badge">{{monster.id}}</span>
+      <span>{{monster.name}}</span>
+      <button class="delete" (click)="delete(monster); $event.stopPropagation()">Delete</button>
     </li>
   </ul>
 </div>
-
 <div *ngIf="selectedMonster">
   <h2>{{selectedMonster.name | uppercase}}</h2>
   <button (click)="gotoDetail()">View Details</button>

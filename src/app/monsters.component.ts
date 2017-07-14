@@ -22,17 +22,40 @@ export class MonstersComponent implements OnInit {
   getMonsters(): void {
     this.monsterService.getMonsters()
       .then( monsters => this.monsters = monsters );
-  }
+  };
 
-    ngOnInit(): void {
+  ngOnInit(): void {
     this.getMonsters();
-  }
+  };
 
-    onSelect( monster: Monster ): void {
+  onSelect( monster: Monster ): void {
     this.selectedMonster = monster;
-  }
+  };
 
-    gotoDetail(): void {
+  gotoDetail(): void {
     this.router.navigate( [ '/detail', this.selectedMonster.id ] );
-  }
+  };
+
+  add( name: string ): void {
+    name = name.trim();
+    if ( !name ) {
+      return;
+    }
+    this.monsterService.createMonster( name )
+      .then( monster => {
+        this.monsters.push( monster );
+        this.selectedMonster = null;
+      } );
+  };
+
+  delete( monster: Monster ): void {
+    this.monsterService
+      .deleteMonster( monster.id )
+      .then( () => {
+        this.monsters = this.monsters.filter( m => m !== monster );
+        if ( this.selectedMonster === monster ) {
+          this.selectedMonster = null;
+        };
+      } )
+  };
 }

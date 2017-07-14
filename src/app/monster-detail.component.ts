@@ -32,4 +32,9 @@ export class MonsterDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.monsterService.updateMonster(this.monster)
+      .then(() => this.goBack());
+  }
+
 }
