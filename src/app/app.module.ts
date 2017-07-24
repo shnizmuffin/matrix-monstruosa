@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 // Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { MonstersComponent } from './monsters.component';
 import { MonsterDetailComponent } from './monster-detail.component';
 
 import { MonsterService } from './monster.service';
+import { MonsterSearchComponent } from './monster-search/monster-search.component';
 
 
 @NgModule( {
@@ -22,14 +23,16 @@ import { MonsterService } from './monster.service';
     AppComponent,
     MonstersComponent,
     MonsterDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    MonsterSearchComponent
   ],
+  //import order matters!
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    HttpModule,
     InMemoryWebApiModule.forRoot( InMemoryDataService ),
-    HttpModule
+    AppRoutingModule
   ],
   providers: [ MonsterService ],
   bootstrap: [ AppComponent ]

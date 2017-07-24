@@ -62,7 +62,7 @@ export class MonsterService {
   }
 
   private handleError( error: any ): Promise < any > {
-    console.error( 'An error occurred', error ); // Needs work
+    console.error( 'An error occurred in monster.service.ts', error ); // Needs work
     return Promise.reject( error.message || error );
   }
 }
