@@ -1,3 +1,5 @@
+import { environment } from 'environments/environment';
+
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -6,15 +8,19 @@ import 'rxjs/add/operator/map';
 
 import { Monster } from '../monster';
 
+const API_URL = environment.apiUrl;
+
 @Injectable()
 export class MonsterSearchService {
+
+  private monstersUrl = API_URL + '/monsters';
 
   constructor( private http: Http ) {}
 
   search( term: string ): Observable < Monster[] > {
     return this.http
-      .get( `api/monsters/?name=${term}` )
-      .map( response => response.json().data as Monster[] );
+      .get( `${this.monstersUrl}?q=${term}` )
+      .map( response => response.json() as Monster[] );
   }
 
 }

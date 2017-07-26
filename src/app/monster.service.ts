@@ -1,14 +1,18 @@
+import { environment } from 'environments/environment';
+
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Monster } from './monster';
 
+const API_URL = environment.apiUrl;
+
 @Injectable()
 
 export class MonsterService {
 
-  private monstersUrl = 'api/monsters';
+  private monstersUrl = API_URL + '/monsters';
   private headers = new Headers( { 'Content-Type': 'application/json' } );
 
   constructor( private http: Http ) {}
@@ -17,7 +21,7 @@ export class MonsterService {
     return this.http
       .get( this.monstersUrl )
       .toPromise()
-      .then( response => response.json().data as Monster[] )
+      .then( response => response.json() as Monster[] )
       .catch( this.handleError );
   }
 
@@ -28,7 +32,7 @@ export class MonsterService {
     return this.http
       .get( url )
       .toPromise()
-      .then( response => response.json().data as Monster )
+      .then( response => response.json() as Monster )
       .catch( this.handleError );
   }
 
@@ -47,7 +51,7 @@ export class MonsterService {
     return this.http
       .post( this.monstersUrl, JSON.stringify( { name: name } ), { headers: this.headers } )
       .toPromise()
-      .then( res => res.json().data as Monster )
+      .then( res => res.json() as Monster )
       .catch( this.handleError );
   }
 
