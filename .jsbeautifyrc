@@ -58,5 +58,25 @@
     "space_in_paren": true, // Add padding spaces within paren, ie. f( a, b )
     "unescape_strings": false, // Should printable characters in strings encoded in \xNN notation be unescaped, "example" vs "\x65\x78\x61\x6d\x70\x6c\x65"
     "wrap_line_length": 0 // Lines should wrap at next opportunity after this number of characters (0 disables)
+  },
+  "json": {
+    "allowed_file_extensions": ["json", "jshintrc", "jsbeautifyrc"],
+    // Rules added here apply only to JSON files. They take precedence over all
+    // of the settings in the 'all' category above.
+
+    // You can add other .jsbeautifyrc rules in this section too.
+
+    // [collapse|collapse-preserve-inline|expand|end-expand|none] Put braces on the same line as control statements (default), or put braces on own line (Allman / ANSI style), or put end braces on own line, or attempt to keep them where they are
+    "brace_style": "collapse",
+
+    "indent_char": " ", // Indentation character
+    "indent_level": 0, // Initial indentation level
+    "indent_size": 2, // Indentation size
+    "indent_with_tabs": false,
+    "keep_array_indentation": false,
+
+    // Should printable characters in strings encoded in \xNN notation be unescaped, "example" vs "\x65\x78\x61\x6d\x70\x6c\x65"
+    "unescape_strings": false,
+    "end_with_newline": true
   }
 }
