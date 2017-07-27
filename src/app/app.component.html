@@ -1,10 +1,5 @@
-<div style="text-align:center">
-  <p>Welcome to</p>
-  <h1>{{title}}</h1>
-  <img class="logo" src="assets/img/scamp.png">
-</div>
-<nav>
-  <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-  <a routerLink="/monsters" routerLinkActive="active">Monsters</a>
-</nav>
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
+<md-sidenav-container>
+  <md-sidenav></md-sidenav>
+</md-sidenav-container>

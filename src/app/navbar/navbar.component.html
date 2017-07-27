@@ -1,0 +1,15 @@
+<md-toolbar color="primary">
+<h1>{{title}}</h1>
+  <nav>
+    <a md-button routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a md-button routerLink="/monsters" routerLinkActive="active">Add Monsters</a>
+  </nav>
+  <span class="mxm-flex-spacer"></span>
+  <button md-icon-button [mdMenuTriggerFor]="appMenu">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #appMenu="mdMenu">
+    <button md-menu-item disabled> Settings </button>
+    <button md-menu-item disabled> Help </button>
+  </md-menu>
+</md-toolbar>

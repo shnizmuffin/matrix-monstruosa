@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialDesignModule } from './app-material-design.module';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonstersComponent } from './monsters.component';
 import { MonsterDetailComponent } from './monster-detail.component';
@@ -23,7 +24,8 @@ import 'hammerjs';
     MonstersComponent,
     MonsterDetailComponent,
     DashboardComponent,
-    MonsterSearchComponent
+    MonsterSearchComponent,
+    NavbarComponent
   ],
   // import order matters!
   imports: [
