@@ -22,7 +22,7 @@ import { MonsterSearchComponent } from './monster-search/monster-search.componen
     DashboardComponent,
     MonsterSearchComponent
   ],
-  //import order matters!
+  // import order matters!
   imports: [
     BrowserModule,
     FormsModule,
