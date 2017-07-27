@@ -1,10 +1,11 @@
-<div id="search-component">
-  <h4>Monster Search</h4>
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-  <div>
-    <div *ngFor="let monster of monsters | async"
-         (click)="gotoDetail(monster)" class="search-result" >
-      {{monster.name}}
-    </div>
-  </div>
-</div>
+<md-toolbar color="primary" id="search-component">
+  <md-icon>search</md-icon>
+  <input #searchBox placeholder="Monster Search" id="search-box" class="mxm-input-round" (keyup)="search(searchBox.value)" />
+</md-toolbar>
+<md-list>
+  <md-list-item class="search-result" *ngFor="let monster of monsters | async">
+    <md-icon md-list-icon>chevron_right</md-icon>
+    <h3 md-line>{{monster.name}}</h3>
+    <md-icon (click)="gotoDetail(monster)">play_circle_outline</md-icon>
+  </md-list-item>
+</md-list>

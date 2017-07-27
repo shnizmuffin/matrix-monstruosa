@@ -10,6 +10,7 @@ import { MonsterService } from './monster.service';
 @Component( {
   selector: 'app-monster-detail',
   templateUrl: './monster-detail.component.html',
+  styleUrls: ['./monster-detail.component.scss']
 } )
 
 export class MonsterDetailComponent implements OnInit {

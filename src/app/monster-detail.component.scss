@@ -1,34 +1,184 @@
-label {
-  display: inline-block;
-  width: 3em;
-  margin: .5em 0;
-  color: #607D8B;
-  font-weight: bold;
+// md20 NPC Styles
+
+// md20 colors
+
+//Grayscale
+$color-white: hsl(0, 0, 100);
+$color-gray-05: hsl(0, 0, 95);
+$color-gray-10: hsl(0, 0, 90);
+$color-gray-20: hsl(0, 0, 80);
+$color-gray-30: hsl(0, 0, 70);
+$color-gray-40: hsl(0, 0, 60);
+$color-gray-50: hsl(0, 0, 50);
+$color-gray-60: hsl(0, 0, 40);
+$color-gray-70: hsl(0, 0, 30);
+$color-gray-80: hsl(0, 0, 20);
+$color-gray-90: hsl(0, 0, 10);
+$color-gray-95: hsl(0, 0, 5);
+$color-black: hsl(0, 0, 0);
+
+//Browns
+
+//Reds
+$color-red-hostile: #d2322d;
+$color-pink-roll20: #ce0f69;
+
+//Oranges
+
+//Yellows
+
+//Greens
+$color-green-friendly: #47a447;
+
+//Blues
+$color-blue-gygax: #e0f1ff;
+$color-blue-curious: #428bca;
+
+//Indigos
+
+//Violets
+
+.stats {
+  // ul {
+  //   margin: 0;
+  //   list-style-position: inside;
+  //   list-style-type: none;
+  //   li {
+  //     padding-left: 15px;
+  //     text-indent: -10px;
+  //     border-left: 2px solid #ccc;
+  //   }
+  // }
+  
 }
 
-input {
-  height: 2em;
-  font-size: 1em;
-  padding-left: .4em;
+// NOT A NUMBER
+// I put results that may return NaN into an element's class
+// to hack around Handlebars _sometimes_ resolving NaN as true, because it's stupid.
+// This affects creatures without values for abilities (undead's CON score)
+// and a bunch of spells/spell-like abilities that don't have DCs.
+.NaN {
+  .spell-like-abilities & {
+    display: none;
+  }
+  .ability-score & {
+    display: none;
+  }
 }
 
-button {
-  margin-top: 20px;
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
+.ability-score-NaN {
+  &::after {
+    content: "—"
+  }
+}
 
-  &:hover {
-    background-color: #cfd8dc;
+.block {
+  display: block;
+  margin: auto auto 1em;
+  background: $color-gray-05;
+  border-bottom: 2px solid $color-gray-10;
+  border-radius: 2px;
+  h4 {
+    margin: 1em 0 0;
+    padding: 0 1em;
+    line-height: 2.1;
+    color: $color-white;
+    background: $color-blue-curious;
+    border-bottom: 2px solid darken($color-blue-curious, 10%);
+    border-radius: 2px;
+    display: block;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  .accordion-title {
+    background: $color-gray-10;
+    border-bottom: 2px $color-gray-20 solid;
+    border-radius: 2px;
+    padding: 1rem 1.5rem;
+    display: block;
+    cursor: pointer;
+
+    h5 {
+      line-height: 1;
+      margin-bottom: 0;
+    }
+  }
+  br {
+    display: none;
+  }
+  .friendly {
+    background: $color-green-friendly;
+    border-bottom: 2px solid darken($color-green-friendly, 10%);
+  }
+  .hostile {
+    background: $color-red-hostile;
+    border-bottom: 2px solid darken($color-red-hostile, 10%);
+  }
+}
+
+.search {
+  color: $color-white;
+  float: right;
+  &:hover, &:active, &:focus {
+    color: $color-gray-20;
+  }
+}
+
+.cr {
+  float: right;
+}
+
+.alignment {
+  text-transform: uppercase;
+}
+
+.size, .type {
+  text-transform: capitalize;
+}
+
+.senses,
+.attacks,
+.feats-list,
+.skills-list,
+.languages-list,
+.defensive-abilities-list,
+.ability-scores-list,
+.special-attacks-list,
+.immunities-list,
+.weaknesses-list,
+.resistances-list,
+.dr-list {
+  display: inline;
+  margin: 0;
+
+  .sense, 
+  .defensive-ability,
+  .special-attack,
+  .feat,
+  .skill,
+  .language,
+  .immunity,
+  .weakness,
+  .resistance,
+  .dr {
+    &:nth-child(n):nth-last-child(n+2):after {
+      content: ","
+    }
+  }
+  & > * {
+    display: inline
   }
 
-  &:disabled {
-    background-color: #eee;
-    color: #ccc;
-    cursor: auto;
+  .feat, .skill, .language {
+    display: inline-block;
+    text-transform: capitalize;
+  }
+}
+
+.special-abilities {
+  .special-ability {
+    .name {
+      text-transform: capitalize;
+    }
   }
 }

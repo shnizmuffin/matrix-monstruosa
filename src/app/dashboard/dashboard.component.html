@@ -2,8 +2,16 @@
 <div class="grid grid-pad">
   <a *ngFor="let monster of monsters" [routerLink]="['/detail', monster.id]" class="col-1-4">
     <div class="module monster">
-    	<h3>{{monster.name}}</h3>
+      <h3>{{monster.name}}</h3>
     </div>
   </a>
 </div>
-<app-monster-search></app-monster-search>
+<section class="mxm-tools">
+  <app-monster-search class="mxm-tool mxm-search-tool"></app-monster-search>
+  <div class="mxm-tool mxm-details-tool">
+    <h3>Monster Detail</h3>
+  </div>
+  <div class="mxm-tool mxm-collections-tool">
+    <h3>My Collections</h3>
+  </div>
+</section>

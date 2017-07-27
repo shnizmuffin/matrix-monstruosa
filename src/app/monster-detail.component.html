@@ -9,4 +9,102 @@
   </div>
   <button (click)="goBack()">Previous</button>
   <button (click)="save()">Save</button>
+
+
+<md-card class="block">
+  <div class="stats">
+    <h4 class="hostile">{{monster.name}}</h4>
+    <section class="general">
+      <a href="#" class="accordion-title"><h5>General</h5></a>
+      <div class="accordion-content">
+        <div>
+          <strong class="cr">CR 1/3</strong>
+          <strong>XP 135</strong>
+        </div>
+        <div><span class="alignment">n</span> <span class="size">small</span> <span class="type">animal</span>
+        </div>
+        <div><strong>Init</strong> 1;
+          <strong>Senses</strong>
+          <ul class="senses">
+            <li class="sense">low-light vision</li>
+            <li class="sense">scent</li>
+            <li class="sense">perception +8</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="defense accordion-item is-active" data-accordion-item="">
+      <a href="#" class="accordion-title" aria-controls="5xcuxd-accordion" role="tab" id="section_undefined" aria-expanded="false" aria-selected="false"><h5>Defense</h5></a>
+      <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="5xcuxd-accordion-label" aria-hidden="false" id="5xcuxd-accordion" style="display: block;">
+        <div class="ac"><strong>AC</strong> 13, 12 touch, 12 flat-footed
+        </div>
+        <div class="hp"><strong>hp</strong> 6 (1d8+2)</div>
+        <div class="saves">
+          <strong>Fort</strong> 4
+          <strong>Ref</strong> 3
+          <strong>Will</strong> 1
+        </div>
+      </div>
+    </section>
+    <section class="offense accordion-item is-active" data-accordion-item="">
+      <a href="#" class="accordion-title" aria-controls="rlhmsi-accordion" role="tab" id="section_undefined" aria-expanded="false" aria-selected="false"><h5>Offense</h5></a>
+      <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="rlhmsi-accordion-label" aria-hidden="false" id="rlhmsi-accordion" style="display: block;">
+        <div class="speed"><strong>Speed</strong> 40 ft.
+        </div>
+        <div class="melee"><strong>Melee</strong>
+          <ul class="attacks">
+            <li class="attack">
+              1 bite +2 (1d4+1; 20/x2)
+            </li>
+          </ul>
+        </div>
+        <div class="space-and-reach">
+          <strong>Space</strong> 5 ft.;
+          <strong>Reach</strong> 5 ft.
+        </div>
+      </div>
+    </section>
+    <section class="statistics accordion-item is-active" data-accordion-item="">
+      <a href="#" class="accordion-title" aria-controls="1e8pct-accordion" role="tab" id="section_undefined" aria-expanded="false" aria-selected="false"><h5>Statistics</h5></a>
+      <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="1e8pct-accordion-label" aria-hidden="false" id="1e8pct-accordion" style="display: block;">
+        <div class="ability-scores">
+          <ul class="ability-scores-list">
+            <li class="ability-score ability-score-13"><strong>Str</strong> <span class="13"> 13</span></li>
+            <li class="ability-score ability-score-13"><strong>Dex</strong> <span class="13"> 13</span></li>
+            <li class="ability-score ability-score-15"><strong>Con</strong> <span class="15"> 15</span></li>
+            <li class="ability-score ability-score-2"><strong>Int</strong> <span class="2"> 2</span></li>
+            <li class="ability-score ability-score-12"><strong>Wis</strong> <span class="12"> 12</span></li>
+            <li class="ability-score ability-score-6"><strong>Cha</strong> <span class="6"> 6</span></li>
+          </ul>
+        </div>
+        <div class="base-stats"><strong>Base Atk</strong> +0;
+          <strong>CMB</strong> +0;
+          <strong>CMD</strong> 11 (15 vs. trip);
+        </div>
+        <div class="feats">
+          <strong>Feats</strong>
+          <ul class="feats-list">
+            <li class="feat"> <a href="http://www.d20pfsrd.com/?s=skill focus (perception)" target="_blank">skill focus (perception)</a></li>
+          </ul>
+        </div>
+        <div class="skills">
+          <strong>Skills</strong>
+          <ul class="skills-list">
+            <li class="skill">acrobatics +1 9 (jumping )</li>
+            <li class="skill">perception +8</li>
+            <li class="skill">survival +1 5 (scent tracking)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="ecology accordion-item is-active" data-accordion-item="">
+      <a href="#" class="accordion-title" aria-controls="ds7bqh-accordion" role="tab" id="section_undefined" aria-expanded="false" aria-selected="false"><h5>Ecology</h5></a>
+      <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="ds7bqh-accordion-label" aria-hidden="false" id="ds7bqh-accordion" style="display: block;">
+        <p><strong>Environment</strong> any</p>
+        <p><strong>Organization</strong> solitary, pair, or pack (3-12)</p>
+        <p><strong>Treasure</strong> none</p>
+      </div>
+    </section>
+  </div>
+</md-card>
 </div>
