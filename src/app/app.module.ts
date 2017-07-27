@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AppMaterialDesignModule } from './app-material-design.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,6 +15,7 @@ import { MonsterDetailComponent } from './monster-detail.component';
 import { MonsterService } from './monster.service';
 import { MonsterSearchComponent } from './monster-search/monster-search.component';
 
+import 'hammerjs';
 
 @NgModule( {
   declarations: [
@@ -25,6 +28,8 @@ import { MonsterSearchComponent } from './monster-search/monster-search.componen
   // import order matters!
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    AppMaterialDesignModule,
     FormsModule,
     HttpModule,
     AppRoutingModule
