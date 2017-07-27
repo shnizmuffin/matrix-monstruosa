@@ -19,7 +19,7 @@ export class MonsterSearchService {
 
   search( term: string ): Observable < Monster[] > {
     return this.http
-      .get( `${this.monstersUrl}?q=${term}` )
+      .get( `${this.monstersUrl}?name_like=${term}` )
       .map( response => response.json() as Monster[] );
   }
 
