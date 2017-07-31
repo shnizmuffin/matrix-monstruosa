@@ -15,8 +15,8 @@ export class DashboardComponent implements OnInit {
   constructor( private monsterService: MonsterService ) {}
 
   ngOnInit(): void {
-    this.monsterService.getMonsters()
-      .then( monsters => this.monsters = monsters.slice( 1, 5 ) );
+    // this.monsterService.getMonsters()
+    //   .then( monsters => this.monsters = monsters.slice( 1, 5 ) );
   }
 
 }
