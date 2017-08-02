@@ -4,7 +4,12 @@
   flex-direction: row;
 
   .mxm-tool {
-    width: 100%;
+    // width: 100%;
     margin: 0 16px;
+    flex-grow: 1;
+  }
+
+  .mxm-details-tool {
+    flex-grow: 2;
   }
 }
