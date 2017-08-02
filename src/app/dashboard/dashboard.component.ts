@@ -1,22 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Monster } from '../monster';
 import { MonsterService } from '../monster.service';
+import { DashboardService } from './dashboard.service';
 
 @Component( {
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: [ './dashboard.component.scss' ]
 } )
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
-  monsters: Monster[];
+  @Input() monster: Monster;
 
-  constructor( private monsterService: MonsterService ) {}
+  constructor(
+    private monsterService: MonsterService,
+    private dashboardService: DashboardService
+  ) {
 
-  ngOnInit(): void {
-    // this.monsterService.getMonsters()
-    //   .then( monsters => this.monsters = monsters.slice( 1, 5 ) );
+    dashboardService.selectedMonster$.subscribe(
+      monster => this.monster
+    )
   }
 
 }

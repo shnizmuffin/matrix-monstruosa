@@ -6,6 +6,6 @@
   <md-list-item class="search-result" *ngFor="let monster of monsters | async">
     <md-icon md-list-icon>chevron_right</md-icon>
     <h3 md-line>{{monster.name}}</h3>
-    <md-icon (click)="gotoDetail(monster)">play_circle_outline</md-icon>
+    <md-icon (click)="viewDetail(monster)">play_circle_outline</md-icon>
   </md-list-item>
 </md-list>

@@ -12,9 +12,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonstersComponent } from './monsters.component';
 import { MonsterDetailComponent } from './monster-detail.component';
+import { MonsterSearchComponent } from './monster-search/monster-search.component';
 
 import { MonsterService } from './monster.service';
-import { MonsterSearchComponent } from './monster-search/monster-search.component';
+import { DashboardService } from './dashboard/dashboard.service';
 
 import 'hammerjs';
 
@@ -36,7 +37,7 @@ import 'hammerjs';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ MonsterService ],
+  providers: [ MonsterService, DashboardService ],
   bootstrap: [ AppComponent ]
 } )
 

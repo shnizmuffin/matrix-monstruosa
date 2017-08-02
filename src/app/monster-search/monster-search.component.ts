@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
@@ -12,8 +12,10 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { MonsterSearchService } from './monster-search.service';
 import { Monster } from '../monster';
+
+import { MonsterSearchService } from './monster-search.service';
+import { DashboardService } from '../dashboard/dashboard.service';
 
 
 @Component( {
@@ -23,12 +25,13 @@ import { Monster } from '../monster';
   providers: [ MonsterSearchService ]
 } )
 export class MonsterSearchComponent implements OnInit {
-
+  @Input() monster: Monster;
   monsters: Observable < Monster[] > ;
   private searchTerms = new Subject < string > ();
 
   constructor(
     private monsterSearchService: MonsterSearchService,
+    private dashboardService: DashboardService,
     private router: Router ) {}
 
   // Push a search term into the observable stream.
@@ -52,6 +55,14 @@ export class MonsterSearchComponent implements OnInit {
         console.log( error ); // needs work.
         return Observable.of < Monster[] > ( [] );
       } );
+  }
+
+  ngOnChanges() {
+
+  }
+
+  viewDetail( monster: Monster ): void {
+    this.dashboardService.selectMonster(monster);
   }
 
   gotoDetail( monster: Monster ): void {

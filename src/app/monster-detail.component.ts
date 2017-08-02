@@ -1,32 +1,34 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
+import { Subscription } from 'rxjs/Subscription';
 
 import { Monster } from './monster';
 import { MonsterService } from './monster.service';
+import { DashboardService } from './dashboard/dashboard.service';
 
 @Component( {
   selector: 'app-monster-detail',
   templateUrl: './monster-detail.component.html',
-  styleUrls: ['./monster-detail.component.scss']
+  styleUrls: [ './monster-detail.component.scss' ]
 } )
 
-export class MonsterDetailComponent implements OnInit {
+export class MonsterDetailComponent {
 
   @Input() monster: Monster;
+  subscription: Subscription;
 
   constructor(
     private monsterService: MonsterService,
+    private dashboardService: DashboardService,
     private route: ActivatedRoute,
     private location: Location
-  ) {}
-
-  ngOnInit(): void {
-    this.route.paramMap
-      .switchMap((params: ParamMap) => this.monsterService.getMonster(+params.get('id')))
-      .subscribe(monster => this.monster = monster);
+  ) {
+    this.subscription = dashboardService.selectedMonster$.subscribe(
+      monster => this.monster = monster
+    )
   }
 
   goBack(): void {
@@ -34,8 +36,8 @@ export class MonsterDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.monsterService.updateMonster(this.monster)
-      .then(() => this.goBack());
+    this.monsterService.updateMonster( this.monster )
+      .then( () => this.goBack() );
   }
 
 }
