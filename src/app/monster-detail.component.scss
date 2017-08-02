@@ -1,42 +1,8 @@
-// md20 NPC Styles
+@import '../assets/css/colors';
 
-// md20 colors
-
-//Grayscale
-$color-white: hsl(0, 0, 100);
-$color-gray-05: hsl(0, 0, 95);
-$color-gray-10: hsl(0, 0, 90);
-$color-gray-20: hsl(0, 0, 80);
-$color-gray-30: hsl(0, 0, 70);
-$color-gray-40: hsl(0, 0, 60);
-$color-gray-50: hsl(0, 0, 50);
-$color-gray-60: hsl(0, 0, 40);
-$color-gray-70: hsl(0, 0, 30);
-$color-gray-80: hsl(0, 0, 20);
-$color-gray-90: hsl(0, 0, 10);
-$color-gray-95: hsl(0, 0, 5);
-$color-black: hsl(0, 0, 0);
-
-//Browns
-
-//Reds
-$color-red-hostile: #d2322d;
-$color-pink-roll20: #ce0f69;
-
-//Oranges
-
-//Yellows
-
-//Greens
-$color-green-friendly: #47a447;
-
-//Blues
-$color-blue-gygax: #e0f1ff;
-$color-blue-curious: #428bca;
-
-//Indigos
-
-//Violets
+.mat-card {
+  padding: 0;
+}
 
 .stats {
   // ul {
@@ -72,47 +38,22 @@ $color-blue-curious: #428bca;
   }
 }
 
-.block {
-  display: block;
-  margin: auto auto 1em;
-  background: $color-gray-05;
-  border-bottom: 2px solid $color-gray-10;
-  border-radius: 2px;
-  h4 {
-    margin: 1em 0 0;
-    padding: 0 1em;
-    line-height: 2.1;
-    color: $color-white;
-    background: $color-blue-curious;
-    border-bottom: 2px solid darken($color-blue-curious, 10%);
-    border-radius: 2px;
-    display: block;
-    text-transform: capitalize;
-    cursor: pointer;
-  }
-  .accordion-title {
-    background: $color-gray-10;
-    border-bottom: 2px $color-gray-20 solid;
-    border-radius: 2px;
-    padding: 1rem 1.5rem;
-    display: block;
-    cursor: pointer;
+ul {
+  padding: 0;
+}
 
-    h5 {
-      line-height: 1;
-      margin-bottom: 0;
-    }
+section > * {
+  padding: 16px;
+}
+
+.block {
+
+  h4 {
+    text-transform: capitalize;
   }
+  
   br {
     display: none;
-  }
-  .friendly {
-    background: $color-green-friendly;
-    border-bottom: 2px solid darken($color-green-friendly, 10%);
-  }
-  .hostile {
-    background: $color-red-hostile;
-    border-bottom: 2px solid darken($color-red-hostile, 10%);
   }
 }
 
