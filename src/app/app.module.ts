@@ -13,20 +13,33 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonstersComponent } from './monsters.component';
 import { MonsterDetailComponent } from './monster-detail.component';
 import { MonsterSearchComponent } from './monster-search/monster-search.component';
+import { AlertComponent } from './alert/alert.component';
 
 import { MonsterService } from './monster.service';
 import { DashboardService } from './dashboard/dashboard.service';
+import { AlertService } from './alert/alert.service';
 
 import 'hammerjs';
+import { AuthGuard } from './auth.guard';
+import { customHttpProvider } from './custom-http.service';
+import { AuthService } from './auth.service';
+import { UserService } from './user.service';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule( {
   declarations: [
     AppComponent,
-    MonstersComponent,
-    MonsterDetailComponent,
+    HomeComponent,
+    NavbarComponent,
+    AlertComponent,
+    LoginComponent,
+    RegisterComponent,
     DashboardComponent,
+    MonsterDetailComponent,
     MonsterSearchComponent,
-    NavbarComponent
+    MonstersComponent
   ],
   // import order matters!
   imports: [
@@ -37,7 +50,7 @@ import 'hammerjs';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ MonsterService, DashboardService ],
+  providers: [ customHttpProvider, MonsterService, DashboardService, AlertService, AuthGuard, AuthService, UserService ],
   bootstrap: [ AppComponent ]
 } )
 
