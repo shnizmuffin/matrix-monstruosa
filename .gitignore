@@ -42,3 +42,6 @@ testem.log
 Thumbs.db
 src/assets/json/
 public/mock.json
+src/server/node_modules/
+public/bestiary.json
+src/server/config.json
