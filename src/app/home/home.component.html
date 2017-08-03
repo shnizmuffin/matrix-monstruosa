@@ -1,0 +1,11 @@
+<section class="home">
+  <h1>Hi {{currentUser.firstName}}!</h1>
+    <p>You're logged in to Matrix Monstruosa</p>
+    <h3>All registered users:</h3>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}} - <button md-button (click)="deleteUser(user._id)">Delete</button>
+        </li>
+    </ul>
+    <p><a md-button [routerLink]="['/login']">Logout</a></p>
+</section>
