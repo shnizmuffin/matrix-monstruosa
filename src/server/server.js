@@ -11,6 +11,7 @@ app.use( bodyParser.urlencoded( { extended: false } ) );
 app.use( bodyParser.json() );
 
 // use JWT auth to secure the api, the token can be passed in the authorization header or querystring
+
 app.use( expressJwt( {
   secret: config.secret,
   getToken: function( req ) {
@@ -25,6 +26,7 @@ app.use( expressJwt( {
 
 // routes
 app.use( '/users', require( './controllers/users.controller' ) );
+app.use( '/monsters', require( './controllers/monsters.controller'));
 
 // start server
 var port = process.env.NODE_ENV === 'production' ? 80 : 4000;
