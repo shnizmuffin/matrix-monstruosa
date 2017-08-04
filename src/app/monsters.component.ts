@@ -33,7 +33,7 @@ export class MonstersComponent implements OnInit {
   };
 
   gotoDetail(): void {
-    this.router.navigate( [ '/detail', this.selectedMonster.id ] );
+    this.router.navigate( [ '/detail', this.selectedMonster._id ] );
   };
 
   add( name: string ): void {
@@ -50,7 +50,7 @@ export class MonstersComponent implements OnInit {
 
   delete( monster: Monster ): void {
     this.monsterService
-      .deleteMonster( monster.id )
+      .deleteMonster( monster._id )
       .then( () => {
         this.monsters = this.monsters.filter( m => m !== monster );
         if ( this.selectedMonster === monster ) {

@@ -1,23 +1,20 @@
-import { environment } from 'environments/environment';
-
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Monster } from './monster';
-
-const API_URL = environment.apiUrl;
 
 @Injectable()
 
 export class MonsterService {
 
-  private monstersUrl = API_URL + '/monsters';
+  private monstersUrl = '/monsters';
   private headers = new Headers( { 'Content-Type': 'application/json' } );
 
   constructor( private http: Http ) {}
 
   getMonsters(): Promise < Monster[] > {
+
     return this.http
       .get( this.monstersUrl )
       .toPromise()
@@ -25,9 +22,9 @@ export class MonsterService {
       .catch( this.handleError );
   }
 
-  getMonster( id: number ): Promise < Monster > {
+  getMonster( _id: string ): Promise < Monster > {
 
-    const url = `${this.monstersUrl}/${id}`;
+    const url = `${this.monstersUrl}/${_id}`;
 
     return this.http
       .get( url )
@@ -38,7 +35,7 @@ export class MonsterService {
 
   updateMonster( monster: Monster ): Promise < Monster > {
 
-    const url = `${this.monstersUrl}/${monster.id}`;
+    const url = `${this.monstersUrl}/${monster._id}`;
 
     return this.http
       .put( url, JSON.stringify( monster ), { headers: this.headers } )
@@ -55,9 +52,9 @@ export class MonsterService {
       .catch( this.handleError );
   }
 
-  deleteMonster( id: number ): Promise < void > {
+  deleteMonster( _id: string ): Promise < void > {
 
-    const url = `${this.monstersUrl}/${id}`;
+    const url = `${this.monstersUrl}/${_id}`;
 
     return this.http.delete( url, { headers: this.headers } )
       .toPromise()

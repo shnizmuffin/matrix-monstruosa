@@ -45,3 +45,4 @@ public/mock.json
 src/server/node_modules/
 public/bestiary.json
 src/server/config.json
+public/bestiary-array.json

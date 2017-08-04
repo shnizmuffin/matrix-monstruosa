@@ -6,7 +6,7 @@
 <div>
   <ul class="monsters">
     <li *ngFor="let monster of monsters" [class.selected]="monster === selectedMonster" (click)="onSelect(monster)">
-      <span class="badge">{{monster.id}}</span>
+      <span class="badge">{{monster._id}}</span>
       <span>{{monster.name}}</span>
       <button class="delete" (click)="delete(monster); $event.stopPropagation()">Delete</button>
     </li>

@@ -16,6 +16,7 @@ import { Monster } from '../monster';
 
 import { MonsterSearchService } from './monster-search.service';
 import { DashboardService } from '../dashboard/dashboard.service';
+import { AlertService } from '../alert/alert.service';
 
 
 @Component( {
@@ -32,6 +33,7 @@ export class MonsterSearchComponent implements OnInit {
   constructor(
     private monsterSearchService: MonsterSearchService,
     private dashboardService: DashboardService,
+    private alertService: AlertService,
     private router: Router ) {}
 
   // Push a search term into the observable stream.
@@ -52,13 +54,10 @@ export class MonsterSearchComponent implements OnInit {
       // return the http search observable or the observable of empty heroes if there was no search term
       .switchMap( term => term ? this.monsterSearchService.search( term ) : Observable.of < Monster[] > ( [] ) )
       .catch( error => {
-        console.log( error ); // needs work.
+        this.alertService.error( error );
+        console.log("something is wrong in the monster-search component.")
         return Observable.of < Monster[] > ( [] );
       } );
-  }
-
-  ngOnChanges() {
-
   }
 
   viewDetail( monster: Monster ): void {
@@ -66,7 +65,7 @@ export class MonsterSearchComponent implements OnInit {
   }
 
   gotoDetail( monster: Monster ): void {
-    let link = [ '/detail', monster.id ];
+    let link = [ '/detail', monster._id ];
     this.router.navigate( link );
   }
 
