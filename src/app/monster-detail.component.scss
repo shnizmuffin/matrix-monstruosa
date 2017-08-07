@@ -20,7 +20,7 @@
 
 // NOT A NUMBER
 // I put results that may return NaN into an element's class
-// to hack around Handlebars _sometimes_ resolving NaN as true, because it's stupid.
+// to hack around NaN _sometimes_ resolving as true, because JS is stupid.
 // This affects creatures without values for abilities (undead's CON score)
 // and a bunch of spells/spell-like abilities that don't have DCs.
 .NaN {
@@ -78,6 +78,7 @@ section > * {
 }
 
 .senses,
+.auras,
 .attacks,
 .feats-list,
 .skills-list,
@@ -92,7 +93,8 @@ section > * {
   display: inline;
   margin: 0;
 
-  .sense, 
+  .sense,
+  .aura, 
   .defensive-ability,
   .special-attack,
   .feat,
