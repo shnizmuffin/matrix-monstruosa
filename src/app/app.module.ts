@@ -27,6 +27,7 @@ import { UserService } from './user.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { KeysPipe } from './keys.pipe';
 
 @NgModule( {
   declarations: [
@@ -39,7 +40,8 @@ import { RegisterComponent } from './register/register.component';
     DashboardComponent,
     MonsterDetailComponent,
     MonsterSearchComponent,
-    MonstersComponent
+    MonstersComponent,
+    KeysPipe
   ],
   // import order matters!
   imports: [
