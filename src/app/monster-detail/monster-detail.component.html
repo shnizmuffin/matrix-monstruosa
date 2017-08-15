@@ -1,8 +1,8 @@
 <md-card *ngIf="monster" class="block mat-elevation-z1">
-  <div class="stats">
     <md-toolbar color="primary">
       <h4 class="hostile">{{monster.name}}</h4>
     </md-toolbar>
+
     <md-expansion-panel [expanded]="true" class="general mat-elevation-z0">
       <md-expansion-panel-header>
         <md-panel-title>General</md-panel-title>
@@ -25,6 +25,7 @@
         </ul>
       </div>
     </md-expansion-panel>
+
     <md-expansion-panel [expanded]="true" class="defense mat-elevation-z0">
       <md-expansion-panel-header>
         <md-panel-title>Defense</md-panel-title>
@@ -71,6 +72,7 @@
         </ul>
       </div>
     </md-expansion-panel>
+
     <md-expansion-panel [expanded]="true" class="offense mat-elevation-z0">
       <md-expansion-panel-header>
         <md-panel-title>Offense</md-panel-title>
@@ -108,6 +110,7 @@
         </ul>
       </div>
     </md-expansion-panel>
+
     <md-expansion-panel [expanded]="false" class="statistics mat-elevation-z0">
       <md-expansion-panel-header>
         <md-panel-title>Statistics</md-panel-title>
@@ -158,7 +161,6 @@
       </div>
     </md-expansion-panel>
 
-
     <md-expansion-panel [expanded]="false" class="ecology mat-elevation-z0">
       <md-expansion-panel-header>
         <md-panel-title>Ecology</md-panel-title>
@@ -168,5 +170,5 @@
       <p><strong>Treasure</strong> {{monster.treasure}}</p>
       <p>{{monster.description}}</p>
     </md-expansion-panel>
-  </div>
+    
 </md-card>

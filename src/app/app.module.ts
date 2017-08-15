@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonstersComponent } from './monsters.component';
-import { MonsterDetailComponent } from './monster-detail.component';
+import { MonsterDetailComponent } from './monster-detail/monster-detail.component';
 import { MonsterSearchComponent } from './monster-search/monster-search.component';
 import { AlertComponent } from './alert/alert.component';
 
@@ -52,7 +52,15 @@ import { KeysPipe } from './keys.pipe';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ customHttpProvider, MonsterService, DashboardService, AlertService, AuthGuard, AuthService, UserService ],
+  providers: [
+    customHttpProvider,
+    MonsterService,
+    DashboardService,
+    AlertService,
+    AuthGuard,
+    AuthService,
+    UserService
+  ],
   bootstrap: [ AppComponent ]
 } )
 

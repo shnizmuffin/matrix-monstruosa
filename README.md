@@ -4,6 +4,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Roadmap
 
+- Search: Partial text matching.
+- Search: Filters, ranges, sliders, etc.
+
+- Monsters: CRUD interface.
+- Monsters: Forking Variants.
+- Monsters: Pairing suggestions from Collections.
+- Monsters: URL Routing to individual monsters.
+
+- Collections: Add/Remove monsters to/from Collections.
+- Collections: Save Collections to User.
+- Collections: URL Routing to user collections.
+
+- API: Roll20 integration.
+- API: Archives of Nethys integration.
+- API: The Homebrewery integration.
+
 ## Known Issues
 
 - The database does not populate a monster's spells known or spells prepared. This is due to an error in the [scraper developed by aarongarrett](https://github.com/aarongarrett/inspired.roll20).

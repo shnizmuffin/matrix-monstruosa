@@ -5,9 +5,9 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 import { Subscription } from 'rxjs/Subscription';
 
-import { Monster } from './monster';
-import { MonsterService } from './monster.service';
-import { DashboardService } from './dashboard/dashboard.service';
+import { Monster } from '../monster';
+import { MonsterService } from '../monster.service';
+import { DashboardService } from '../dashboard/dashboard.service';
 
 @Component( {
   selector: 'app-monster-detail',

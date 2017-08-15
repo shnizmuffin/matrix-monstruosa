@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonstersComponent } from './monsters.component';
-import { MonsterDetailComponent } from './monster-detail.component';
+import { MonsterDetailComponent } from './monster-detail/monster-detail.component';
 
 import { AuthGuard } from './auth.guard';
 
