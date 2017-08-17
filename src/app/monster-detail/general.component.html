@@ -1,0 +1,22 @@
+<md-expansion-panel [expanded]="true" class="general mat-elevation-z0">
+      <md-expansion-panel-header>
+        <md-panel-title>General</md-panel-title>
+      </md-expansion-panel-header>
+      <div>
+        <strong class="cr">CR {{monster.cr}}</strong>
+        <strong>XP {{monster.xp}}</strong>
+      </div>
+      <div><span class="alignment">{{monster.alignment}}</span> <span class="size">{{monster.size}}</span> <span class="type">{{monster.type}}</span> <span *ngIf="monster.subtype?.length > 0" class="subtype">[{{monster.subtype}}]</span> <span class="race">{{monster.race}}</span>
+      </div>
+      <div><strong>Init</strong> {{monster.initiative}};
+        <strong>Senses</strong>
+        <ul class="senses">
+          <li *ngFor="let sense of monster.senses" class="sense"> {{sense}}</li>
+        </ul>
+      </div>
+      <div *ngIf="monster.auras?.length > 0"><strong>Auras</strong>
+        <ul class="auras">
+          <li *ngFor="let aura of monster.auras" class="aura"> {{aura}}</li>
+        </ul>
+      </div>
+    </md-expansion-panel>

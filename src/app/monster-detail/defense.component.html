@@ -1,0 +1,46 @@
+<md-expansion-panel [expanded]="true" class="defense mat-elevation-z0">
+      <md-expansion-panel-header>
+        <md-panel-title>Defense</md-panel-title>
+      </md-expansion-panel-header>
+      <div class="ac"><strong>AC </strong><span *ngIf="monster.ac.normal">{{monster.ac.normal}}</span><span *ngIf="monster.ac.touch">, {{monster.ac.touch}} touch</span><span *ngIf="monster.ac['flat-footed']">, {{monster.ac['flat-footed']}} flat-footed</span>
+      </div>
+      <div class="hp"><strong>hp </strong><span>{{monster.hp}} ({{monster.hd}})</span><span *ngIf="monster.regeneration.amount > 0"> regeneration {{monster.regeneration.amount}} ({{monster.regeneration.overcome}})</span><span *ngIf="monster.fasthealing.amount > 0"> fast healing {{monster.fasthealing.amount}} <em>{{monster.fasthealing.special}}</em></span>
+      </div>
+      <div class="saves">
+        <strong>Fort</strong> {{monster.saves.fortitude.bonus}}<span *ngFor="let circ of monster.saves.fortitude.circumstantial">, +{{circ.bonus}} vs. {{circ.circumstance}}</span>
+        <strong>Ref</strong> {{monster.saves.reflex.bonus}}<span *ngFor="let circ of monster.saves.reflex.circumstantial">, +{{circ.bonus}} vs. {{circ.circumstance}}</span>
+        <strong>Will</strong> {{monster.saves.will.bonus}}<span *ngFor="let circ of monster.saves.will.circumstantial">, +{{circ.bonus}} vs. {{circ.circumstance}}</span>
+      </div>
+      <div *ngIf="monster.defensiveabilities?.length > 0" class="defensive-abilities"><strong>Defensive Abilities</strong>
+        <ul class="defensive-abilities-list">
+          <li *ngFor="let ability of monster.defensiveabilities" class="defensive-ability">
+            {{ability}}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="monster.dr?.length > 0" class="dr"><strong>DR</strong>
+        <ul class="dr-list">
+          <li *ngFor="let ability of monster.dr" class="dr">
+            {{ability}}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="monster.sr.value > 0" class="sr"><strong>SR</strong>
+            {{monster.sr.value}} {{monster.sr.versus}}
+      </div>
+      <div *ngIf="monster.immunities?.length > 0" class="immunities"><strong>Immunities</strong>
+        <ul class="immunities-list">
+          <li *ngFor="let ability of monster.immunities" class="immunity"> {{ability}}</li>
+        </ul>
+      </div>
+      <div *ngIf="monster.resistances?.length > 0" class="resistances"><strong>Resistances</strong>
+        <ul class="resistances-list">
+          <li *ngFor="let ability of monster.resistances" class="resistance"> {{ability}}</li>
+        </ul>
+      </div>
+      <div *ngIf="monster.weaknesses?.length > 0" class="weaknesses"><strong>Weaknesses</strong>
+        <ul class="weaknesses-list">
+          <li *ngFor="let ability of monster.weaknesses" class="weakness"> {{ability}}</li>
+        </ul>
+      </div>
+    </md-expansion-panel>

@@ -1,0 +1,37 @@
+    <md-expansion-panel [expanded]="true" class="offense mat-elevation-z0">
+      <md-expansion-panel-header>
+        <md-panel-title>Offense</md-panel-title>
+      </md-expansion-panel-header>
+      <div class="speed"><strong>Speed</strong><span *ngFor="let speed of monster.speed"> {{speed}}</span>
+      </div>
+      <div *ngIf="monster.melee?.length > 0" class="melee"><strong>Melee</strong>
+        <ul class="attacks">
+          <li *ngFor="let attack of monster.melee" class="attack">
+            {{attack.amount}} {{attack.weapon}} {{attack.bonus}} ({{attack.damage}}; {{attack.critmin}}/x{{attack.critmult}}) <span *ngIf="attack.special">plus {{attack.special}}</span>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="monster.ranged?.length > 0" class="ranged"><strong>Ranged</strong>
+        <ul class="attacks">
+          <li *ngFor="let attack of monster.ranged" class="attack">
+            {{attack.amount}} {{attack.weapon}} {{attack.bonus}} ({{attack.damage}}; {{attack.critmin}}/x{{attack.critmult}}) <span *ngIf="attack.special">plus {{attack.special}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="space-and-reach">
+        <strong>Space</strong> {{monster.space}};
+        <strong>Reach</strong> {{monster.reach}}
+      </div>
+
+      <div *ngIf="monster.specialattacks?.length > 0" class="special-attacks"><strong>Special Attacks</strong>
+        <ul class="special-attacks-list">
+          <li *ngFor="let attack of monster.specialattacks" class="special-attack">{{attack}}</li>
+        </ul>
+      </div>
+
+      <div *ngIf="monster.sla.abilities?.length > 0" class="spell-like-abilities"><strong>Spell-Like Abilities</strong> (CL {{monster.sla.casterlevel}}; concentration {{monster.sla.concentration}})
+        <ul class="spell-like-abilities-list">
+          <li *ngFor="let sla of monster.sla.abilities" class="spell-like-ability">{{sla.frequency}} - {{sla.name}} (DC {{sla.dc}})</li>
+        </ul>
+      </div>
+    </md-expansion-panel>

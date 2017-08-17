@@ -1,0 +1,40 @@
+<md-expansion-panel [expanded]="false" class="statistics mat-elevation-z0">
+      <md-expansion-panel-header>
+        <md-panel-title>Statistics</md-panel-title>
+      </md-expansion-panel-header>
+      <div class="ability-scores">
+        <ul class="ability-scores-list">
+          <li class="ability-score ability-score-{{monster.abilityscores.str}}"><strong>Str</strong> <span class="{{monster.abilityscores.str}}"> {{monster.abilityscores.str}}</span></li>
+          <li class="ability-score ability-score-{{monster.abilityscores.dex}}"><strong>Dex</strong> <span class="{{monster.abilityscores.dex}}"> {{monster.abilityscores.dex}}</span></li>
+          <li class="ability-score ability-score-{{monster.abilityscores.con}}"><strong>Con</strong> <span class="{{monster.abilityscores.con}}"> {{monster.abilityscores.con}}</span></li>
+          <li class="ability-score ability-score-{{monster.abilityscores.int}}"><strong>Int</strong> <span class="{{monster.abilityscores.int}}"> {{monster.abilityscores.int}}</span></li>
+          <li class="ability-score ability-score-{{monster.abilityscores.wis}}"><strong>Wis</strong> <span class="{{monster.abilityscores.wis}}"> {{monster.abilityscores.wis}}</span></li>
+          <li class="ability-score ability-score-{{monster.abilityscores.cha}}"><strong>Cha</strong> <span class="{{monster.abilityscores.cha}}"> {{monster.abilityscores.cha}}</span></li>
+        </ul>
+      </div>
+      <div class="base-stats">
+        <strong>Base Atk</strong> +{{monster.bab}};
+        <strong>CMB</strong> +{{monster.cmb.bonus}} <span *ngIf="monster.cmb.special != ''">({{monster.cmb.special}})</span>;
+        <strong>CMD</strong> {{monster.cmd.bonus}} <span *ngIf="monster.cmd.special != ''">({{monster.cmd.special}})</span>
+      </div>
+      <div *ngIf="monster.feats?.length > 0" class="feats">
+        <strong>Feats</strong>
+        <ul class="feats-list">
+          <li *ngFor="let feat of monster.feats" class="feat"> <a href="http://www.d20pfsrd.com/?s={{feat}}" target="_blank">{{feat}}</a></li>
+        </ul>
+      </div>
+      <div *ngIf="monster.skills" class="skills">
+        <strong>Skills</strong>
+        <ul class="skills-list">
+          <li *ngFor="let skill of monster.skills | keys" class="skill">{{skill.key}} +{{skill.value.bonus}}<span *ngIf="skill.value.circumstantial?.length > 0"> (<span *ngFor="let circ of skill.value.circumstantial">+{{circ.bonus}} {{circ.circumstance}}</span>)</span></li>
+        </ul>
+      </div>
+      <div *ngIf="monster.languages?.length > 0" class="languages">
+      <strong>Languages</strong>
+        <ul class="languages-list">
+          <li *ngFor="let language of monster.languages" class="language">{{language}}</li>
+        </ul>
+      </div>
+      <div *ngIf="monster.sq" class="sq"><strong>Special Qualities</strong> {{monster.sq}}
+      </div>
+    </md-expansion-panel>
