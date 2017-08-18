@@ -4,8 +4,9 @@
 </md-toolbar>
 <md-list>
   <md-list-item class="search-result" *ngFor="let monster of monsters | async">
-    <md-icon md-list-icon>chevron_right</md-icon>
-    <h3 md-line>{{monster.name}}</h3>
-    <md-icon (click)="viewDetail(monster)">play_circle_outline</md-icon>
+    <h3 md-line><strong>CR {{monster.cr}}</strong> {{monster.name}}</h3>
+    <button md-icon-button (click)="viewDetail(monster)">
+      <md-icon mdTooltip="View">visibility</md-icon>
+    </button>
   </md-list-item>
 </md-list>

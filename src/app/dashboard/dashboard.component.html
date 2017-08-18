@@ -1,7 +1,51 @@
 <section class="mxm-tools">
   <app-monster-search class="mxm-tool mxm-search-tool mat-elevation-z1"></app-monster-search>
-  <app-monster-detail class="mxm-tool mxm-details-tool"></app-monster-detail>
-  <!-- <div class="mxm-tool mxm-collections-tool mat-elevation-z1">
-    <h3>My Collections</h3>
-  </div> -->
+  <app-monster-detail class="mxm-tool mxm-details-tool mat-elevation-z1"></app-monster-detail>
+  <div class="mxm-tool mxm-collections-tool mat-elevation-z1">
+    <md-toolbar color="primary">
+      <h3>My Collections</h3>
+      <span class="mxm-flex-spacer"></span>
+      <button md-icon-button><md-icon mdTooltip="New Collection">create_new_folder</md-icon></button>
+    </md-toolbar>
+    <md-accordion [displayMode]="flat">
+    <md-expansion-panel *ngFor="let number of [0,1,2,3]" class="mat-elevation-z0">
+      <md-expansion-panel-header>
+        <md-panel-title>
+          Most Favorite Monsters
+        </md-panel-title>
+      </md-expansion-panel-header>
+
+      <md-list>
+        <md-list-item>
+          <h3 md-line>monster.name</h3>
+          <button md-icon-button><md-icon mdTooltip="View">visibility</md-icon></button>
+          <button md-icon-button color="primary"><md-icon mdTooltip="Remove">remove_circle_outline</md-icon></button>
+        </md-list-item>
+        <md-list-item>
+          <h3 md-line>monster.name</h3>
+          <button md-icon-button><md-icon mdTooltip="View">visibility</md-icon></button>
+          <button md-icon-button color="primary"><md-icon mdTooltip="Remove">remove_circle_outline</md-icon></button>
+        </md-list-item>
+        <md-list-item>
+          <h3 md-line>monster.name</h3>
+          <button md-icon-button><md-icon mdTooltip="View">visibility</md-icon></button>
+          <button md-icon-button color="primary"><md-icon mdTooltip="Remove">remove_circle_outline</md-icon></button>
+        </md-list-item>
+        <md-list-item>
+          <h3 md-line>monster.name</h3>
+          <button md-icon-button><md-icon mdTooltip="View">visibility</md-icon></button>
+          <button md-icon-button color="primary"><md-icon mdTooltip="Remove">remove_circle_outline</md-icon></button>
+        </md-list-item>
+      </md-list>
+
+      <md-action-row>
+        <button md-icon-button><md-icon mdTooltip="View All">open_in_new</md-icon></button>
+        <button md-icon-button><md-icon mdTooltip="Duplicate">content_copy</md-icon></button>
+        <button md-icon-button><md-icon mdTooltip="Edit">edit</md-icon></button>
+        <button md-icon-button color="primary"><md-icon mdTooltip="Delete">delete_forever</md-icon></button>
+      </md-action-row>
+    </md-expansion-panel>
+    </md-accordion>
+
+  </div>
 </section>

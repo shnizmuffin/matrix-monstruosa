@@ -1,6 +1,13 @@
-<md-card *ngIf="monster" class="block mat-elevation-z1">
+<md-card *ngIf="monster; else empty" class="block mat-elevation-z0">
   <md-toolbar color="primary">
     <h4 class="hostile">{{monster.name}}</h4>
+    <span class="mxm-flex-spacer"></span>
+    <button md-icon-button>
+      <md-icon mdTooltip="View in New Window">open_in_new</md-icon>
+    </button>
+    <button md-icon-button>
+      <md-icon mdTooltip="Add to Collection">add_circle</md-icon>
+    </button>
   </md-toolbar>
 
   <app-general [monster]="monster">
@@ -20,4 +27,12 @@
 
   <app-ecology [monster]="monster">
   </app-ecology>
+
 </md-card>
+
+<ng-template #empty>
+    <md-toolbar color="primary">
+      <h4 class="hostile">Monster Details</h4>
+    </md-toolbar>
+    <p>Find a monster using the search bar and its statistics will show up here.</p>
+</ng-template>
