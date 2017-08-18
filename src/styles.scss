@@ -37,6 +37,10 @@ $dark-theme : mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   border: none;
 }
 
+.mxm-flex-spacer {
+  flex: 1 1 auto;
+}
+
 textarea:focus,
 input:focus,
 .uneditable-input:focus {
