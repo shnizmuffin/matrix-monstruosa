@@ -8,6 +8,7 @@ import {
   MdInputModule,
   MdButtonModule,
   MdToolbarModule,
+  MdTooltipModule,
   MdSidenavModule,
   MdMenuModule
 } from '@angular/material';
@@ -22,6 +23,7 @@ import {
     MdInputModule,
     MdButtonModule,
     MdToolbarModule,
+    MdTooltipModule,
     MdSidenavModule,
     MdMenuModule
   ],
@@ -33,6 +35,7 @@ import {
     MdInputModule,
     MdButtonModule,
     MdToolbarModule,
+    MdTooltipModule,
     MdSidenavModule,
     MdMenuModule
   ],
